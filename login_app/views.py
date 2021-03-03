@@ -5,7 +5,7 @@ import bcrypt
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Yo Arod")
+    return HttpResponse("vuelve")
 
 def index(request):
     return render(request, "index.html")
