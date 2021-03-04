@@ -36,7 +36,6 @@ class UserManager(models.Manager):
         if len(forminfo['email']) < 1:
             errors['email'] = "Email is required"
         else:
-
             emailsExist = User.objects.filter(email=forminfo['email'])
             print(emailsExist)
             if len(emailsExist) == 0:
@@ -57,3 +56,11 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     birthday = models.DateField(auto_now=True)
+    objects = UserManager()
+
+class friend(models.Model):
+    friend_name = models.CharField(max_length=20)
+    creator = models.ForeignKey(User, related_name="creador", on_delete=models.CASCADE)
+    added = models.ManyToManyField(User, related_name="agregados")
+created_at = models.DateTimeField(auto_now_add=True)
+updated_at = models.DateTimeField(auto_now=True)

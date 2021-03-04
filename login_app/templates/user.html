@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>{{users.alias}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {{users.name}}</title>
   {% load staticfiles %}
-  <link rel="stylesheet" href="{% static 'friends/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
   <div class="right">
-    <h5><a href='/friends'>Home </a><a href="/logout">   Logout</a></h5>
+    <h5><a href='/success'>Home </a><a href="/logout">   Logout</a></h5>
   </div>
   <h2>{{users.name}}'s Profile </h2>
   <p>Name: {{users.name}} {{users.alias}}</p>
